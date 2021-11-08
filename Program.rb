@@ -4,19 +4,19 @@
 
 # Available types - Black, Red, Green, Blue
 
-# Save the number ranges in a hash or something? - Some are just the starting value and one of them is a specified range - might be hard
-
 # Print out the card type of the provided card number: e.g., 6014 -> Fly Buys Blue
 def cardType(cardNumber)
     #TODO COME BACK AND CONVERT TO SWITCH STATEMENT OR SOMETHING
     if cardNumber.to_i >= 6014355526 && cardNumber.to_i <= 6014355529
-        puts "Fly Buys Green"
+        puts "Fly Buys Green:"
     elsif cardNumber.start_with?("6014352")
-        puts "Fly Buys Red" 
+        puts "Fly Buys Red:" 
     elsif cardNumber.start_with?("60141")
-        puts "Fly Buys Black"
+        puts "Fly Buys Black:"
     elsif cardNumber.start_with?("6014")
-        puts "Fly Buys Blue" 
+        puts "Fly Buys Blue:" 
+    else 
+        puts "Unknown type"
     end
 end
 

@@ -1,6 +1,6 @@
 require './Program'
 puts "Enter card numbers: "
 while true
-    cardNumber = gets.chomp
+    cardNumber = gets.chomp.delete(" ")
     Card.new(cardNumber)
 end

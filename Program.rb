@@ -19,14 +19,14 @@ class Card
         elsif cardNumber.match?("6014.*")
             @type = "Fly Buys Blue" 
         else 
-            @type = "Unknown type"
+            @type = "Unknown"
         end
         print "#{@type}: #{cardNumber} "
     end
 
     # Calculate the checksum for the provided checksum and output if the card is valid or not
     def cardChecksum(cardNumber)
-        cardArray = cardNumber.split("")
+        cardArray = cardNumber.to_s.split("")
 
         # Start at next to last digit, and every second digit, double the digit    
         negativeIndex = 2
@@ -59,6 +59,7 @@ class Card
 
     # Initialise this Card with a number and check if its valid or not
     def initialize(cardNumber)
+        cardNumber = cardNumber.to_s.delete(" ") # Remove whitespaces
         cardType(cardNumber)
         cardChecksum(cardNumber)
     end

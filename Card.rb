@@ -1,15 +1,9 @@
-# Use classes? - Class for a keycard that has its code and type or not bother?
-# Check the first few digits with a switch statement in a specific order
-# Validate the keycode separately afterwards
-
-# Available types - Black, Red, Green, Blue
-
 class Card
     attr_reader :valid
     attr_reader :type
+
     # Print out the card type of the provided card number: e.g., 6014 -> Fly Buys Blue
     def cardType(cardNumber)
-        #TODO COME BACK AND CONVERT TO SWITCH STATEMENT OR SOMETHING
         if cardNumber.match?("601435552[6-9].*")
             @type = "Fly Buys Green"
         elsif cardNumber.match?("6014352.*")
@@ -54,7 +48,6 @@ class Card
             puts "(invalid)"
             @valid = false
         end
-
     end
 
     # Initialise this Card with a number and check if its valid or not

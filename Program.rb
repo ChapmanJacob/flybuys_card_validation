@@ -23,15 +23,31 @@ end
 # Calculate the checksum for the provided checksum and output if the card is valid or not
 def cardChecksum(cardNumber)
     cardArray = cardNumber.split("")
-    # Start at next to last digit, and every second digit, double the digit
-    
+
+    # Start at next to last digit, and every second digit, double the digit    
     negativeIndex = 2
     loop {
         break if negativeIndex > cardArray.length
         cardArray[cardArray.length - negativeIndex] = cardArray[cardArray.length - negativeIndex].to_i * 2
         negativeIndex += 2
     }
-    puts cardArray
+
+    # Total up all the digits in the array and if one is above 10, split it into 2 digits and add them
+    total = 0
+    cardArray.each {|digit|
+        if digit.to_i > 9
+            total += 1 + (digit.to_i - 10)
+        else
+            total += digit.to_i
+        end
+    }
+
+    # Output result
+    if total % 10 == 0
+        puts "Valid card number"
+    else 
+        puts "Invalid code number"
+    end
 
 end
 

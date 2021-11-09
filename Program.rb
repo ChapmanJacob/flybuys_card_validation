@@ -20,10 +20,25 @@ def cardType(cardNumber)
     end
 end
 
+# Calculate the checksum for the provided checksum and output if the card is valid or not
+def cardChecksum(cardNumber)
+    cardArray = cardNumber.split("")
+    # Start at next to last digit, and every second digit, double the digit
+    
+    negativeIndex = 2
+    loop {
+        break if negativeIndex > cardArray.length
+        cardArray[cardArray.length - negativeIndex] = cardArray[cardArray.length - negativeIndex].to_i * 2
+        negativeIndex += 2
+    }
+    puts cardArray
+
+end
 
 puts "Enter card numbers: "
 while true
     cardNumber = gets.chomp
 
     cardType(cardNumber)
+    cardChecksum(cardNumber)
 end

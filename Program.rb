@@ -19,9 +19,9 @@ class Card
         elsif cardNumber.match?("6014.*")
             @type = "Fly Buys Blue" 
         else 
-            @type = "Unknown type: "
+            @type = "Unknown type"
         end
-        print "#{@type}: "
+        print "#{@type}: #{cardNumber} "
     end
 
     # Calculate the checksum for the provided checksum and output if the card is valid or not
@@ -48,10 +48,10 @@ class Card
 
         # Output result
         if total % 10 == 0
-            puts "Valid card number"
+            puts "(valid)"
             @valid = true
         else 
-            puts "Invalid code number"
+            puts "(invalid)"
             @valid = false
         end
 

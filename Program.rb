@@ -8,13 +8,12 @@
 def cardType(cardNumber)
     #TODO COME BACK AND CONVERT TO SWITCH STATEMENT OR SOMETHING
     if cardNumber.match?("601435552[6-9].*")
-    #if cardNumber.to_i >= 6014355526 && cardNumber.to_i <= 6014355529 #TODO NOT CORRECT BECAUSE ITS STILL A PREFIX TO THE ACTUAL NUMBER
         print "Fly Buys Green:"
-    elsif cardNumber.start_with?("6014352")
+    elsif cardNumber.match?("6014352.*")
         print "Fly Buys Red:" 
-    elsif cardNumber.start_with?("60141")
+    elsif cardNumber.match?("60141.*")
         print "Fly Buys Black:"
-    elsif cardNumber.start_with?("6014")
+    elsif cardNumber.match?("6014.*")
         print "Fly Buys Blue:" 
     else 
         print "Unknown type:"
@@ -27,5 +26,4 @@ while true
     cardNumber = gets.chomp
 
     cardType(cardNumber)
-
 end

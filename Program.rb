@@ -8,15 +8,15 @@
 def cardType(cardNumber)
     #TODO COME BACK AND CONVERT TO SWITCH STATEMENT OR SOMETHING
     if cardNumber.match?("601435552[6-9].*")
-        print "Fly Buys Green:"
+        print "Fly Buys Green: "
     elsif cardNumber.match?("6014352.*")
-        print "Fly Buys Red:" 
+        print "Fly Buys Red: " 
     elsif cardNumber.match?("60141.*")
-        print "Fly Buys Black:"
+        print "Fly Buys Black: "
     elsif cardNumber.match?("6014.*")
-        print "Fly Buys Blue:" 
+        print "Fly Buys Blue: " 
     else 
-        print "Unknown type:"
+        print "Unknown type: "
     end
 end
 

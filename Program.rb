@@ -7,16 +7,17 @@
 # Print out the card type of the provided card number: e.g., 6014 -> Fly Buys Blue
 def cardType(cardNumber)
     #TODO COME BACK AND CONVERT TO SWITCH STATEMENT OR SOMETHING
-    if cardNumber.to_i >= 6014355526 && cardNumber.to_i <= 6014355529
-        puts "Fly Buys Green:"
+    if cardNumber.match?("601435552[6-9].*")
+    #if cardNumber.to_i >= 6014355526 && cardNumber.to_i <= 6014355529 #TODO NOT CORRECT BECAUSE ITS STILL A PREFIX TO THE ACTUAL NUMBER
+        print "Fly Buys Green:"
     elsif cardNumber.start_with?("6014352")
-        puts "Fly Buys Red:" 
+        print "Fly Buys Red:" 
     elsif cardNumber.start_with?("60141")
-        puts "Fly Buys Black:"
+        print "Fly Buys Black:"
     elsif cardNumber.start_with?("6014")
-        puts "Fly Buys Blue:" 
+        print "Fly Buys Blue:" 
     else 
-        puts "Unknown type"
+        print "Unknown type:"
     end
 end
 

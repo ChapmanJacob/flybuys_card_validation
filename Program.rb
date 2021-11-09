@@ -5,6 +5,8 @@
 # Available types - Black, Red, Green, Blue
 
 class Card
+    attr_reader :valid
+    attr_reader :type
     # Print out the card type of the provided card number: e.g., 6014 -> Fly Buys Blue
     def cardType(cardNumber)
         #TODO COME BACK AND CONVERT TO SWITCH STATEMENT OR SOMETHING

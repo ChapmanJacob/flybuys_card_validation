@@ -4,13 +4,13 @@ class Card
 
     # Print out the card type of the provided card number: e.g., 6014 -> Fly Buys Blue
     def cardType(cardNumber)
-        if cardNumber.match?("601435552[6-9].*")
+        if cardNumber.match?("601435552[6-9].*") && cardNumber.length == 16
             @type = "Fly Buys Green"
-        elsif cardNumber.match?("6014352.*")
+        elsif cardNumber.match?("6014352.*") && cardNumber.length == 16
             @type = "Fly Buys Red" 
-        elsif cardNumber.match?("60141.*")
+        elsif cardNumber.match?("60141.*") && cardNumber.length.between?(16, 17)
             @type = "Fly Buys Black"
-        elsif cardNumber.match?("6014.*")
+        elsif cardNumber.match?("6014.*") && cardNumber.length == 16
             @type = "Fly Buys Blue" 
         else 
             @type = "Unknown"

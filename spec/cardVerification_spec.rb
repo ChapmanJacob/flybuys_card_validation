@@ -1,4 +1,4 @@
-require './Card'
+require './CardValidator'
 describe Card, "#valid" do
     it "Checks that valid Cards are marked as Valid" do
         trueValues = ["60141016700078611", "6014111100033006", "6014709045001234", "6014352700000140", "6014355526000020"]

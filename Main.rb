@@ -1,5 +1,5 @@
 # Change filename to Main.rb
-require './Card'
+require './CardValidator'
 puts "Enter card numbers: "
 while true
     cardNumber = gets.chomp.delete(" ")

@@ -86,14 +86,19 @@ class CardValidator
       else
         total += digit.to_i
       end
-    end 
-    return total
+    end
+    return total # Tests fail if this is removed
   end
 
   # Check for letters in the input
+  #def check_digits(cardArray)
+  #  cardArray.each do |character|
+  #    return false if character.match?(/\D/)
+  #  end
+  #end
+
+  # Alternative Check for letters in input
   def check_digits(cardArray)
-    cardArray.each do |character|
-      return false if character.match?(/\D/)
-    end
+    cardArray.none? { |character| character.match?(/\D/) }
   end
-end 
+end
